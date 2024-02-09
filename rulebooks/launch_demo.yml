@@ -34,12 +34,12 @@
             ref: "{{event.payload.pull_request.head.ref}}"
             pr: "{{event.payload.number}}"
             sha: "{{event.payload.after}}"
-    - name: run job template
-      condition: event.repository_name == "{{repo_name}}" and event.pr is defined
-      action:
-        run_job_template:
-          name: Refresh remaining capacity
-          post_events: true
+    # - name: run job template
+    #   condition: event.repository_name == "{{repo_name}}" and event.pr is defined
+    #   action:
+    #     run_job_template:
+    #       name: Refresh remaining capacity
+    #       post_events: true
     - name: print output
       condition: event.output is defined
       action:
