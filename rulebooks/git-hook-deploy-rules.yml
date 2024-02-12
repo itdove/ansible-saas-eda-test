@@ -8,10 +8,9 @@
     - name: run tests 1
       condition: event.payload.repo == "{{repo}}"
       action:
-        run_playbook:
-          name: ansible.eda.continuous_integration
-          var_root: payload
-          post_events: true
+        run_job_template:
+          name: Demo Job Template
+          organization: Default
     - name: print output
       condition: event.output is defined
       action:
