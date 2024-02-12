@@ -2,7 +2,6 @@
   hosts: all
   sources:
     - ansible.eda.webhook:
-        port: 5001
   rules:
     - name: Pull Request Open
       condition: event.meta.headers.X_Github_Event == "pull_request" and event.payload.action == "opened"
